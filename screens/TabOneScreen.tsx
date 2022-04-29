@@ -1,12 +1,7 @@
 import { StyleSheet, Button } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
-
-const reRoute = (page: string) => {
-  console.log(page); // change this to re-route to some other page.
-}
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
@@ -15,7 +10,9 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <Text style={styles.title}>Choose Teams</Text>
 
       <View style={styles.btn}>
-        <Button title="Create Team" onPress={() => { reRoute("something") }} />
+        <Button title="Create Team" onPress={() => {
+          navigation.navigate('TeamCreation')
+        }} />
       </View>
 
       <View style={styles.team__tabs}>
