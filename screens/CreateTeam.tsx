@@ -1,7 +1,7 @@
 import React from "react";
-import { RootStackScreenProps } from "../types";
+import { RootStackScreenProps } from "types";
 import styled from 'styled-components/native';
-import { View } from "../components/Themed";
+import { Text, View } from "components/Themed";
 
 const PageContainer = styled(View)`
 	justifyContent: center;
@@ -9,8 +9,10 @@ const PageContainer = styled(View)`
 
 const TeamCreation = ({ navigation }: RootStackScreenProps<"TeamCreation">) => {
 	return (
-		<PageContainer></PageContainer>
+		<PageContainer>
+			<Text>Team Details</Text>
+		</PageContainer>
 	);
 }
 
-export default TeamCreation
+export default TeamCreation;
