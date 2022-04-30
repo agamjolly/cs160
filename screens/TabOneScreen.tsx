@@ -1,20 +1,27 @@
-import { StyleSheet, Button } from 'react-native';
+import { Button, StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
 import { Text, View } from 'components/Themed';
 import { Title } from 'components/StyledText';
 import ScreenContainer from 'components/ScreenContainer';
 import { RootTabScreenProps } from 'types';
 
+const CreateTeamBtnContainer = styled.View`
+  minWidth: 150px;
+  maxWidth: 175px;
+  marginTop: 30px;
+`;
+
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <ScreenContainer>
       <Title>Your Teams</Title>
 
-      <View style={styles.btn}>
+      <CreateTeamBtnContainer>
         <Button title="Create Team" onPress={() => {
           navigation.navigate('TeamCreation')
         }} />
-      </View>
+      </CreateTeamBtnContainer>
 
       <View style={styles.team__tabs}>
         { /* Default team */}
