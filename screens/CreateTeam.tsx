@@ -1,17 +1,12 @@
-import React from "react";
 import { RootStackScreenProps } from "types";
-import styled from 'styled-components/native';
-import { Text, View } from "components/Themed";
-
-const PageContainer = styled(View)`
-	justifyContent: center;
-`;
+import TitleText from "components/TitleText";
+import ScreenContainer from "components/ScreenContainer";
 
 const TeamCreation = ({ navigation }: RootStackScreenProps<"TeamCreation">) => {
 	return (
-		<PageContainer>
-			<Text>Team Details</Text>
-		</PageContainer>
+		<ScreenContainer>
+			<TitleText>Team Details</TitleText>
+		</ScreenContainer>
 	);
 }
 

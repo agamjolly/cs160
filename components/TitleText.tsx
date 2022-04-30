@@ -2,8 +2,6 @@ import { Text } from "components/Themed";
 import styled from 'styled-components/native';
 
 const Title = styled(Text)`
-	marginTop: 20px;
-	marginLeft: 15px;
 	fontSize: 50;
 	fontWeight: bold;
 `;

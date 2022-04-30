@@ -1,13 +1,14 @@
 import { StyleSheet, Button } from 'react-native';
 
 import { Text, View } from 'components/Themed';
+import TitleText from 'components/TitleText';
+import ScreenContainer from 'components/ScreenContainer';
 import { RootTabScreenProps } from 'types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <View style={styles.container}>
-
-      <Text style={styles.title}>Choose Teams</Text>
+    <ScreenContainer>
+      <TitleText>Your Teams</TitleText>
 
       <View style={styles.btn}>
         <Button title="Create Team" onPress={() => {
@@ -18,15 +19,15 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <View style={styles.team__tabs}>
         { /* Default team */}
         <View style={styles.team}>
-          <Text style={styles.team__title}>Some team name</Text>
+          <Text style={styles.team__title}>Team A</Text>
         </View>
 
         <View style={styles.team}>
-          <Text style={styles.team__title}>Some team name</Text>
+          <Text style={styles.team__title}>Team B</Text>
         </View>
 
       </View>
-    </View>
+    </ScreenContainer>
   );
 }
 
