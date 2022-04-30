@@ -5,11 +5,11 @@ import { Text, View } from 'components/Themed';
 import { Title } from 'components/StyledText';
 import ScreenContainer from 'components/ScreenContainer';
 import { RootTabScreenProps } from 'types';
+import StyledButton from 'components/StyledButton';
 
 const CreateTeamBtnContainer = styled.View`
   minWidth: 150px;
   maxWidth: 175px;
-  marginTop: 30px;
 `;
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
@@ -17,11 +17,9 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
     <ScreenContainer>
       <Title>Your Teams</Title>
 
-      <CreateTeamBtnContainer>
-        <Button title="Create Team" onPress={() => {
-          navigation.navigate('TeamCreation')
-        }} />
-      </CreateTeamBtnContainer>
+      <StyledButton title='Create Team' onPress={() => {
+        navigation.navigate('TeamCreation')
+      }} />
 
       <View style={styles.team__tabs}>
         { /* Default team */}
