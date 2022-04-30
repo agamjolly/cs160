@@ -7,11 +7,6 @@ import ScreenContainer from 'components/ScreenContainer';
 import { RootTabScreenProps } from 'types';
 import StyledButton from 'components/StyledButton';
 
-const CreateTeamBtnContainer = styled.View`
-  minWidth: 150px;
-  maxWidth: 175px;
-`;
-
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <ScreenContainer>
