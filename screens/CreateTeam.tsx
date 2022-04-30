@@ -1,11 +1,11 @@
 import { RootStackScreenProps } from "types";
-import TitleText from "components/TitleText";
 import ScreenContainer from "components/ScreenContainer";
+import { Title } from 'components/StyledText';
 
 const TeamCreation = ({ navigation }: RootStackScreenProps<"TeamCreation">) => {
 	return (
 		<ScreenContainer>
-			<TitleText>Team Details</TitleText>
+			<Title>Team Details</Title>
 		</ScreenContainer>
 	);
 }

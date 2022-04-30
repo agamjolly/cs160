@@ -1,14 +1,14 @@
 import { StyleSheet, Button } from 'react-native';
 
 import { Text, View } from 'components/Themed';
-import TitleText from 'components/TitleText';
+import { Title } from 'components/StyledText';
 import ScreenContainer from 'components/ScreenContainer';
 import { RootTabScreenProps } from 'types';
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
     <ScreenContainer>
-      <TitleText>Your Teams</TitleText>
+      <Title>Your Teams</Title>
 
       <View style={styles.btn}>
         <Button title="Create Team" onPress={() => {
