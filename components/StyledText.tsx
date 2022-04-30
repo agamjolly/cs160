@@ -2,14 +2,14 @@ import { Text, TextProps } from './Themed';
 import styled from 'styled-components/native';
 
 const TitleText = styled(Text) <{ underContent?: boolean }>`
-	fontSize: 50;
+	fontSize: 50px;
 	fontWeight: bold;
 	marginBottom: 30px;
 	${p => p.underContent && `marginTop: 30px;`}
 `;
 
 const HeadingText = styled(Text)`
-	fontSize: 30;
+	fontSize: 30px;
 	fontWeight: bold;
 `;
 

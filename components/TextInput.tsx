@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 
 const Input = styled.TextInput`
 	padding: 10px;
-	borderRadius: 5;
+	borderRadius: 5px;
 	background: #ebebeb;
 	marginBottom: 20px;
 `;
