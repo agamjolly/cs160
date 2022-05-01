@@ -19,6 +19,7 @@ import TabThreeScreen from 'screens/TabThreeScreen';
 import CreateTeam from 'screens/CreateTeam';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from 'types';
 import LinkingConfiguration from './LinkingConfiguration';
+import TeamPage from 'screens/TeamPage';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -42,7 +43,8 @@ function RootNavigator() {
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
 
-      <Stack.Screen name="TeamCreation" component={CreateTeam} />
+      <Stack.Screen name="TeamCreation" component={CreateTeam} options={{ title: "Create a Team" }} />
+      <Stack.Screen name="TeamPage" component={TeamPage} options={{ title: "Team Timeline" }} />
     </Stack.Navigator>
   );
 }
