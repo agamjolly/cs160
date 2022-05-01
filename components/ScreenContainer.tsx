@@ -1,9 +1,12 @@
-import { View, ViewProps } from "components/Themed";
+import { Dimensions } from "react-native";
 import styled from 'styled-components/native';
+import { View, ViewProps } from "components/Themed";
+
+const { height: scrHeight } = Dimensions.get('window');
 
 const Container = styled(View) <{ fitHeight?: boolean }>`
 	padding: 20px;
-	${p => p.fitHeight ? `max-height:` : `min-height:`} 100vh;
+	${p => p.fitHeight ? `height:` : `min-height:`} ${scrHeight - 64}px;
 `;
 
 type ScreenContainerProps = {

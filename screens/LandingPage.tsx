@@ -8,7 +8,7 @@ import StyledButton from 'components/StyledButton';
 
 export default function LandingPage({ navigation }: RootStackScreenProps<'Root'>) {
   return (
-    <ScreenContainer>
+    <ScreenContainer fitHeight>
       <Title>Your Teams</Title>
 
       <StyledButton title='Create Team' onPress={() => {
