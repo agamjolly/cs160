@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 const ButtonContainer = styled(View)`
   minWidth: 150px;
   maxWidth: 175px;
+	align-self: center;
 `;
 
 type StyledButtonProps = Button['props'] & ViewProps;

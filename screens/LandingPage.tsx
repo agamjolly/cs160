@@ -1,12 +1,12 @@
-import { StyleSheet, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from 'components/Themed';
 import { Title } from 'components/StyledText';
 import ScreenContainer from 'components/ScreenContainer';
-import { RootTabScreenProps } from 'types';
+import { RootStackScreenProps } from 'types';
 import StyledButton from 'components/StyledButton';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function LandingPage({ navigation }: RootStackScreenProps<'Root'>) {
   return (
     <ScreenContainer>
       <Title>Your Teams</Title>
@@ -31,6 +31,12 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         </View>
 
       </View>
+
+      <View style={styles.separator} />
+
+      <StyledButton title='Profile' onPress={() => {
+        navigation.navigate('Profile')
+      }} />
     </ScreenContainer>
   );
 }
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   separator: {
-    marginVertical: 30,
+    marginVertical: 20,
     height: 1,
     width: '80%',
   },
