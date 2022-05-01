@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableHighlight, TouchableOpacity } from 'react-native';
 
 import { Text, View } from 'components/Themed';
 import { Title } from 'components/StyledText';
@@ -17,9 +17,14 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 
       <View style={styles.team__tabs}>
         { /* Default team */}
-        <View style={styles.team}>
+        <TouchableOpacity
+          style={styles.team}
+          onPress={() => {
+            navigation.navigate('TeamPage')
+          }}
+        >
           <Text style={styles.team__title}>Team A</Text>
-        </View>
+        </TouchableOpacity>
 
         <View style={styles.team}>
           <Text style={styles.team__title}>Team B</Text>
