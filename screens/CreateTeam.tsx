@@ -56,7 +56,7 @@ const TeamCreation = ({ navigation }: RootStackScreenProps<"TeamCreation">) => {
 	}
 
 	const handleCreateTeam = () => {
-
+		navigation.navigate('Root', { teamCreated: true, createdTeamName: teamName });
 	}
 
 	useEffect(() => {
