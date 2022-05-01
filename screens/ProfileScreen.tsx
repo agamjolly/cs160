@@ -5,8 +5,9 @@ import React from 'react';
 import { Title } from 'components/StyledText';
 import ProfileContainer from 'components/ProfileContainer';
 import ScreenContainer from 'components/ScreenContainer';
+import { RootStackScreenProps } from 'types';
 
-export default function TabTwoScreen() {
+export default function ProfileScreen({ navigation }: RootStackScreenProps<'Profile'>) {
   return (
     <ScreenContainer>
       <View style={styles.container}>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components/native";
 import { Agenda, AgendaEntry, AgendaSchedule, DateData } from "react-native-calendars";
-import { RootStackScreenProps } from "types";
+import { RootTabScreenProps } from "types";
 import { View, Text } from "components/Themed";
 
 const CalendarItem = styled(View) <{ height: number }>`
@@ -17,7 +17,7 @@ const ItemText = styled(Text)`
 	font-size: 15pt;
 `;
 
-const TeamPage = ({ navigation }: RootStackScreenProps<'TeamPage'>) => {
+const TeamTimeline = ({ navigation }: RootTabScreenProps<'Timeline'>) => {
 	const [agendaItems, setAgendaItems] = useState<AgendaSchedule>({
 		'2022-05-05': [{ name: "Soft Deadline", height: 50, day: '' }],
 		'2022-05-15': [{ name: "Hard Deadline", height: 50, day: '' }],
@@ -55,4 +55,4 @@ const TeamPage = ({ navigation }: RootStackScreenProps<'TeamPage'>) => {
 	)
 }
 
-export default TeamPage;
+export default TeamTimeline;
