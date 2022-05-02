@@ -12,7 +12,7 @@ type StyledButtonProps = Button['props'] & ViewProps;
 
 const StyledButton = (props: StyledButtonProps) => (
 	<ButtonContainer {...props}>
-		<Button title={props.title} onPress={props.onPress} />
+		<Button color={props.color} title={props.title} onPress={props.onPress} />
 	</ButtonContainer>
 );
 

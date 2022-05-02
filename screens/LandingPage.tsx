@@ -12,8 +12,10 @@ const CreatedTeam = styled.TouchableOpacity<{ visible: boolean }>`
 `;
 
 export default function LandingPage({ navigation, route }: RootStackScreenProps<'Root'>) {
-  const teamCreated = route.params.teamCreated;
-  const createdTeamName = route.params.createdTeamName;
+  // const teamCreated = route.params.teamCreated;
+  // const createdTeamName = route.params.createdTeamName;
+  const teamCreated = true;
+  const createdTeamName = 'Created Team';
 
   return (
     <ScreenContainer fitHeight>
@@ -28,7 +30,7 @@ export default function LandingPage({ navigation, route }: RootStackScreenProps<
         <TouchableOpacity
           style={styles.team}
           onPress={() => {
-            navigation.navigate('TeamPage')
+            navigation.navigate('TeamPage', { teamName: 'Team A' })
           }}
         >
           <Text style={styles.team__title}>Team A</Text>
@@ -39,7 +41,7 @@ export default function LandingPage({ navigation, route }: RootStackScreenProps<
           visible={teamCreated}
           style={styles.team}
           onPress={() => {
-            navigation.navigate('TeamPage')
+            navigation.navigate('TeamPage', { teamName: createdTeamName })
           }}
         >
           <Text style={styles.team__title}>{createdTeamName}</Text>
@@ -50,7 +52,7 @@ export default function LandingPage({ navigation, route }: RootStackScreenProps<
       <View style={styles.separator} />
 
       <StyledButton title='Profile' onPress={() => {
-        navigation.navigate('Profile')
+        navigation.navigate('Profile', { myProfile: true, name: "Agam Jolly" })
       }} />
     </ScreenContainer>
   );
