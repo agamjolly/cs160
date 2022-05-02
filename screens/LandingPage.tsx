@@ -12,10 +12,8 @@ const CreatedTeam = styled.TouchableOpacity<{ visible: boolean }>`
 `;
 
 export default function LandingPage({ navigation, route }: RootStackScreenProps<'Root'>) {
-  // const teamCreated = route.params.teamCreated;
-  // const createdTeamName = route.params.createdTeamName;
-  const teamCreated = true;
-  const createdTeamName = 'Created Team';
+  const teamCreated = route.params.teamCreated;
+  const createdTeamName = route.params.createdTeamName;
 
   return (
     <ScreenContainer fitHeight>

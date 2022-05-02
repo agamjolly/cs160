@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import { RootStackScreenProps, RootTabParamList } from "types";
 import Colors from "constants/Colors";
 import useColorScheme from "hooks/useColorScheme";
-import TabThreeScreen from "screens/TabThreeScreen";
+import PerformanceScreen from "screens/PerformanceScreen";
 import TeamTimeline from "screens/TeamTimeline";
 import ProfileButton from "components/ProfileButton";
 import MembersScreen from "screens/MembersScreen";
@@ -58,11 +58,11 @@ const BottomTabNavigator = ({ navigation, route }: RootStackScreenProps<'TeamPag
 			/>
 			<BottomTab.Screen
 				name="Performance"
-				component={TabThreeScreen}
+				component={PerformanceScreen}
 				options={{
 					title: 'Performance',
 					headerTitle: teamName,
-					tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+					tabBarIcon: ({ color }) => <TabBarIcon name="area-chart" color={color} />,
 				}}
 			/>
 		</BottomTab.Navigator>
