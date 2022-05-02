@@ -5,10 +5,18 @@ import { Title } from 'components/StyledText';
 import ScreenContainer from 'components/ScreenContainer';
 import { RootStackScreenProps } from 'types';
 import StyledButton from 'components/StyledButton';
+import styled from 'styled-components/native';
 
-export default function LandingPage({ navigation }: RootStackScreenProps<'Root'>) {
+const CreatedTeam = styled.TouchableOpacity<{ visible: boolean }>`
+  ${p => !p.visible && `display: none;`}
+`;
+
+export default function LandingPage({ navigation, route }: RootStackScreenProps<'Root'>) {
+  const teamCreated = route.params.teamCreated;
+  const createdTeamName = route.params.createdTeamName;
+
   return (
-    <ScreenContainer>
+    <ScreenContainer fitHeight>
       <Title>Your Teams</Title>
 
       <StyledButton title='Create Team' onPress={() => {
@@ -20,22 +28,29 @@ export default function LandingPage({ navigation }: RootStackScreenProps<'Root'>
         <TouchableOpacity
           style={styles.team}
           onPress={() => {
-            navigation.navigate('TeamPage')
+            navigation.navigate('TeamPage', { teamName: 'Team A' })
           }}
         >
           <Text style={styles.team__title}>Team A</Text>
         </TouchableOpacity>
 
-        <View style={styles.team}>
-          <Text style={styles.team__title}>Team B</Text>
-        </View>
+
+        <CreatedTeam
+          visible={teamCreated}
+          style={styles.team}
+          onPress={() => {
+            navigation.navigate('TeamPage', { teamName: createdTeamName })
+          }}
+        >
+          <Text style={styles.team__title}>{createdTeamName}</Text>
+        </CreatedTeam>
 
       </View>
 
       <View style={styles.separator} />
 
       <StyledButton title='Profile' onPress={() => {
-        navigation.navigate('Profile')
+        navigation.navigate('Profile', { myProfile: true, name: "Agam Jolly" })
       }} />
     </ScreenContainer>
   );

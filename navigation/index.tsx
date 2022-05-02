@@ -36,12 +36,27 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Root" component={LandingPage} options={{ title: 'Home' }} />
+      <Stack.Screen
+        name="Root"
+        component={LandingPage}
+        options={{ title: 'Home' }}
+        initialParams={{
+          teamCreated: false,
+          createdTeamName: '',
+        }}
+      />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
 
       <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: "Profile" }} />
       <Stack.Screen name="TeamCreation" component={CreateTeam} options={{ title: "Create a Team" }} />
-      <Stack.Screen name="TeamPage" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="TeamPage"
+        component={BottomTabNavigator}
+        options={{ headerShown: false }}
+        initialParams={{
+          teamName: '',
+        }}
+      />
     </Stack.Navigator>
   );
 }

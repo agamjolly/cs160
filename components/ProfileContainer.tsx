@@ -1,7 +1,8 @@
 import { Text, View } from 'components/Themed';
-import { StyleSheet, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
 import TextInput from "components/TextInput";
 import { useState } from 'react';
+import StyledButton from './StyledButton';
 
 const styles = StyleSheet.create({
     new_info__header: {
@@ -53,20 +54,16 @@ const styles = StyleSheet.create({
 
 // TODO: Complete this function.
 
-const ProfileContainer = () => {
-
+const ProfileContainer = ({ myProfile }: { myProfile: boolean }) => {
     const [editable, setEditable] = useState(false);
-    const [btnColor, setBtnColor] = useState('red');
     const [btnText, setBtnText] = useState('edit');
 
     const btnPress = () => {
         setEditable(!editable);
-        if (btnColor === '#2196f3') {
-            setBtnColor('red');
+        if (editable) {
             setBtnText('edit');
 
         } else {
-            setBtnColor('#2196f3');
             setBtnText('done');
         }
     }
@@ -108,9 +105,14 @@ const ProfileContainer = () => {
                     editable={editable}
                 />
             </View>
-            <View style={styles.btn}>
-                <Button color={btnColor} title={btnText} onPress={btnPress} />
-            </View>
+            {myProfile ?
+                <StyledButton title={btnText} onPress={btnPress} />
+                :
+                <StyledButton title="Send Reminder" onPress={() => {
+                    alert("Reminder Sent")
+                }
+                } />
+            }
 
         </View >
     );
