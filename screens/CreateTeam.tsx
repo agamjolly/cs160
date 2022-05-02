@@ -64,7 +64,7 @@ const TeamCreation = ({ navigation }: RootStackScreenProps<"TeamCreation">) => {
 	}, [members]);
 
 	return (
-		<ScreenContainer>
+		<ScreenContainer scrollable>
 			<Title>Team Details</Title>
 			<TextInput
 

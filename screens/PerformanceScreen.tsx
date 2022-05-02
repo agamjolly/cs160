@@ -121,7 +121,7 @@ const PerformanceScreen = ({ navigation }: RootTabScreenProps<'Performance'>) =>
   );
 
   return (
-    <ScreenContainer fitHeight fillHeight tabScreen>
+    <ScreenContainer fillHeight tabScreen>
       <View>
         <Heading>{`${perfTarget} Performance`}</Heading>
         <PerformanceSummary lightColor={performanceBgColor}>

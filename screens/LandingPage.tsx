@@ -16,7 +16,7 @@ export default function LandingPage({ navigation, route }: RootStackScreenProps<
   const createdTeamName = route.params.createdTeamName;
 
   return (
-    <ScreenContainer fitHeight>
+    <ScreenContainer>
       <Title>Your Teams</Title>
 
       <StyledButton title='Create Team' onPress={() => {
