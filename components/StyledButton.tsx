@@ -14,6 +14,7 @@ const Button = styled.TouchableOpacity<{ color?: string }>`
 const ButtonText = styled(Text)`
 	color: white;
 	text-transform: uppercase;
+	font-weight: 500;
 `;
 
 type StyledButtonProps = TouchableOpacityProps & { title: string; color?: string };
