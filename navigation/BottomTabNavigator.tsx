@@ -8,6 +8,7 @@ import PerformanceScreen from "screens/PerformanceScreen";
 import TeamTimeline from "screens/TeamTimeline";
 import ProfileButton from "components/ProfileButton";
 import MembersScreen from "screens/MembersScreen";
+import TeamDashboard from "screens/TeamDashboard";
 
 const HomeButton = styled.TouchableOpacity`
 	margin-left: 10pt;
@@ -54,6 +55,15 @@ const BottomTabNavigator = ({ navigation, route }: RootStackScreenProps<'TeamPag
 					title: 'Timeline',
 					headerTitle: teamName,
 					tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,
+				}}
+			/>
+			<BottomTab.Screen
+				name="Dashboard"
+				component={TeamDashboard}
+				options={{
+					title: 'Dashboard',
+					headerTitle: teamName,
+					tabBarIcon: ({ color }) => <TabBarIcon name="rocket" color={color} />,
 				}}
 			/>
 			<BottomTab.Screen
